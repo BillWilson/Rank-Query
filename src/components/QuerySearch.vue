@@ -1,5 +1,5 @@
 <template>
-    <v-container style="margin-bottom: 10em">
+    <v-container>
         <v-layout
                 column
                 text-xs-center
@@ -7,9 +7,10 @@
                 justify-center
                 align-content-center
                 fill-height
+                :style="{paddingBottom: paddingBottomSize + 'em'}"
         >
             <v-flex xs12 sm4 xs4>
-                <h3 class="display-1 mb-3">英雄交鋒賽積分查詢</h3>
+                <h3 class="display-1 mb-3 font-weight-black">英雄交鋒賽積分查詢</h3>
                 <v-form v-model="valid">
                     <v-text-field
                             label="Solo"
@@ -33,7 +34,7 @@
                 </v-alert>
             </v-flex>
 
-            <v-flex xs12 sm4 >
+            <v-flex xs12 sm4>
                 <v-card>
                     <v-container
                             fluid
@@ -83,11 +84,11 @@
 </template>
 
 <script>
-    import { db } from '../plugins/firebase';
+    import {db} from '../plugins/firebase';
 
     export default {
         data: () => ({
-            valid:false,
+            valid: false,
 
             UserId: "",
             alert: false,
@@ -99,6 +100,8 @@
             rules: {
                 required: value => !!value || '請填入 Battle Tag.',
             },
+
+            paddingBottomSize: 0,
         }),
         methods: {
             queryRank: function () {
@@ -121,24 +124,42 @@
                             this.alertMessage = '連線錯誤，請稍後再試';
                         });
                 }
+            },
+
+            onResize () {
+                this.paddingBottomSize = window.innerWidth < 600 ? 11 : 8;
             }
+        },
+
+        beforeDestroy () {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('resize', this.onResize, { passive: true })
+            }
+        },
+
+        mounted () {
+            this.onResize()
+            window.addEventListener('resize', this.onResize, { passive: true })
         },
     }
 </script>
 
 <style>
-.small-card {
-    margin:0px auto;
-}
-.data-card {
-    background: #1a325e;
-}
-.data-card-title {
-    color: #ffffff;
-    font-size: 1.3em;
-}
-.data-card-value {
-    color: #ff9c00;
-    font-size: 3.2em;
-}
+    .small-card {
+        margin: 0px auto;
+    }
+
+    .data-card {
+        background: #1a325e;
+    }
+
+    .data-card-title {
+        color: #ffffff;
+        font-size: 1.3em;
+    }
+
+    .data-card-value {
+        color: #ff9c00;
+        font-size: 3.2em;
+    }
 </style>
