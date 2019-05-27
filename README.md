@@ -1,5 +1,8 @@
 # Rank Query
+Simple rank data search with Vue and firestore.
 
+[Online Site here](http://mcl.game.tw/kingofow/rank/)
+ 
 ## Project setup
 ```
 npm install
