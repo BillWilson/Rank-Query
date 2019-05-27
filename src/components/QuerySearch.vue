@@ -18,7 +18,7 @@
                     </v-chip>
                     <v-chip outline color="green">
                         <v-icon left>update</v-icon>
-                        最後更新時間：尚未更新
+                        最後更新時間：{{lastUpdate}}
                     </v-chip>
                 </div>
                 <v-form v-model="valid">
@@ -127,10 +127,12 @@
 </template>
 
 <script>
-    import {db} from '../plugins/firebase';
+    import {firebaseApp} from '../plugins/firebase';
+    const db = firebaseApp.db;
 
     export default {
         data: () => ({
+            lastUpdate: document.querySelector("meta[name='lastUpdate']").getAttribute("content"),
             valid: false,
 
             UserId: "",
@@ -175,20 +177,20 @@
                 }
             },
 
-            onResize () {
+            onResize() {
                 this.paddingBottomSize = window.innerWidth < 600 ? 11 : 8;
             }
         },
 
-        beforeDestroy () {
+        beforeDestroy() {
             if (typeof window !== 'undefined') {
-                window.removeEventListener('resize', this.onResize, { passive: true })
+                window.removeEventListener('resize', this.onResize, {passive: true})
             }
         },
 
-        mounted () {
+        mounted() {
             this.onResize()
-            window.addEventListener('resize', this.onResize, { passive: true })
+            window.addEventListener('resize', this.onResize, {passive: true})
         },
     }
 </script>
