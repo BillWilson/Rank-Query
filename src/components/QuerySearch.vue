@@ -189,7 +189,7 @@
         },
 
         mounted() {
-            this.onResize()
+            this.onResize();
             window.addEventListener('resize', this.onResize, {passive: true})
         },
     }

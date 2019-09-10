@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="keywords" content="MCL"/>
-    <meta name="description" content="MCL 2019"/>
-    <meta property="og:title" content="鬥陣特攻- 死鬥之王英雄交鋒賽"/>
-    <meta property="og:description" content="鬥陣特攻- 死鬥之王英雄交鋒賽"/>
-    <meta property="og:image" content="<%= BASE_URL %>og.jpg"/>
+    <meta name="keywords" content="<%= process.env.VUE_APP_META_KEYWORD %>"/>
+    <meta name="description" content="<%= process.env.VUE_APP_META_DESCRIPTION %>"/>
+    <meta property="og:title" content="<%= process.env.VUE_APP_META_OG_TITLE %>"/>
+    <meta property="og:description" content="<%= process.env.VUE_APP_META_OG_DESCRIPTION %>"/>
+    <meta property="og:image" content="<%= process.env.VUE_APP_META_OG_IMAGE %>"/>
     <meta name="lastUpdate" content="<%= process.env.VUE_APP_LAST_UPDATE %>">
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -20,32 +20,59 @@
     <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ff9c00">
+    <meta name="msapplication-TileColor" content="#353c42">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ff9c00">
-    <title>鬥陣特攻- 死鬥之王英雄交鋒賽</title>
+    <meta name="theme-color" content="#263238">
+    <title><%= process.env.VUE_APP_META_TITLE %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '<%= process.env.VUE_APP_GOOGLE_TAG_MANAGER %>');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117096996-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!--    <script>-->
+<!--        window.dataLayer = window.dataLayer || [];-->
 
-      gtag('config', 'UA-117096996-3');
-    </script>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but the website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<!--        function gtag() {-->
+<!--            dataLayer.push(arguments);-->
+<!--        }-->
+
+<!--        gtag('js', new Date());-->
+
+<!--        gtag('config', "<%= process.env.VUE_APP_GOOGLE_ANALYTICS %>");-->
+<!--    </script>-->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=<%= process.env.VUE_APP_GOOGLE_TAG_MANAGER %>"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<noscript>
+    <strong>We're sorry but the website doesn't work properly without JavaScript enabled. Please enable it to
+        continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>
