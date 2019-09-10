@@ -163,7 +163,7 @@
             lastUpdate: document.querySelector("meta[name='lastUpdate']").getAttribute("content"),
             valid: false,
 
-            snCode: 'l8xF9RZj',
+            snCode: '',
             codes: false,
             captain: '',
 

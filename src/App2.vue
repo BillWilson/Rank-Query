@@ -45,7 +45,7 @@
                             xs12
                             class="footer-bottom"
                     >
-                        Copyright © HOUND 13. All Rights Reserved. <br> <a href="#" class="white--text">服務條款</a> | <a href="#" class="white--text">隱私權政策</a>
+                        Copyright © HOUND 13. All Rights Reserved. <br> <a href="https://hundred-soul.tw/event/20190621/privacy.html" class="white--text" target="_blank">隱私權政策</a>
                     </v-flex>
                 </v-layout>
             </v-footer>
