@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import './plugins/vuetify'
 import './plugins/firebase'
-import Mcl from './App.vue';
-import Hs from './App2.vue';
+const Mcl = () => import('./App.vue');
+const Hs = () => import('./App2.vue');
 import VueClipboard from 'vue-clipboard2';
 
 Vue.use(VueClipboard);

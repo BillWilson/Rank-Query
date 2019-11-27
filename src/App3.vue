@@ -7,14 +7,14 @@
                             contain
                             max-height="315"
                             aspect-ratio="2.701"
-                            :src="require('@/assets/banner2.jpg')"
-                    ></v-img>
+                            :src="require('@/assets/hs-top-logo.png')">
+                    </v-img>
                 </v-flex>
             </v-layout>
         </section>
 
         <v-content>
-            <QuerySearch/>
+            <SnQuery/>
 
             <v-footer
                     height="auto"
@@ -31,6 +31,7 @@
                             :key="link.name"
                             flat
                             round
+                            sm6
                             :href="link.href"
                             target="_blank"
                     >
@@ -44,7 +45,7 @@
                             xs12
                             class="footer-bottom"
                     >
-                        Copyright © 2019 MCL
+                        Copyright © HOUND 13. All Rights Reserved. <br> <a href="https://hundred-soul.tw/event/20190621/privacy.html" class="white--text" target="_blank">隱私權政策</a>
                     </v-flex>
                 </v-layout>
             </v-footer>
@@ -53,26 +54,22 @@
 </template>
 
 <script>
-    import QuerySearch from './components/QuerySearch';
+    import SnQuery from './components/SnQueryForMember';
 
     export default {
         name: 'App',
         components: {
-            QuerySearch
+            SnQuery
         },
         data: () => ({
             links: [
                 {
-                    name: '賽事官網',
-                    href: 'http://mcl.game.tw/kingofow'
+                    name: '官方網站',
+                    href: 'https://hundred-soul.tw/'
                 },
                 {
                     name: '官方粉絲團',
-                    href: 'https://facebook.com/mcl.game.tw'
-                },
-                {
-                    name: '鬥陣特攻',
-                    href: 'https://playoverwatch.com/zh-tw/'
+                    href: 'https://www.facebook.com/hundredsoul.tw'
                 },
             ]
         })
@@ -92,7 +89,7 @@
     }
 
     .footer-top {
-        background: #ff9c00;
+        background: #CFD8DC;
     }
 
     .footer-bottom {
@@ -100,7 +97,9 @@
     }
 
     .top-banner {
-        background: url('assets/banner2-blur.jpg');
+        background: url('assets/hs-cover-bg.jpg');
         background-size: cover;
+        opacity:0.95;
     }
+
 </style>

@@ -10,12 +10,8 @@
                 :style="{paddingBottom: paddingBottomSize + 'em'}"
         >
             <v-flex xs12 sm4 xs4>
-                <h3 class="display-1 mb-1 font-weight-black">英雄交鋒賽積分查詢</h3>
+                <h3 class="display-1 mb-1 font-weight-black">八人自由混戰死鬥賽積分查詢</h3>
                 <div class="mb-3">
-                    <v-chip outline color="primary">
-                        <v-icon left>list</v-icon>
-                        積分資料提供：Blizzard Entertainment
-                    </v-chip>
                     <v-chip outline color="green">
                         <v-icon left>update</v-icon>
                         最後更新時間：{{lastUpdate}}
